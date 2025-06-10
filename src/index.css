@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+  font-family: "Inter", sans-serif;
+  background-color: #000000;
+}
+.crt-scanlines {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 1rem;
+  transform: scale(1);
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.1);
+  isolation: isolate;
+}
+
+/* Scanline overlay */
+.crt-scanlines::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(rgba(0, 255, 0, 0.05) 50%, rgba(0, 0, 0, 0.15) 50%);
+  background-size: 100% 4px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Green glow overlay */
+.crt-scanlines::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.04),
+    rgba(0, 0, 0, 0.25) 70%
+  );
+  mix-blend-mode: soft-light;
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* Optional curvature via subtle transform */
+.crt-scanlines img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transform: perspective(800px) translateZ(0) scale(1.02);
+}
+
