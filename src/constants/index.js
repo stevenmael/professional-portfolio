@@ -70,7 +70,7 @@ export const PROJECTS = [
 ];
 
 export const CONTACT = {
-  address: "Urb. San Francisco 2, Calle San Felipe, 207, Yauco, Puerto Rico",
+  address: "Yauco, Puerto Rico",
   phoneNo: "787 445 5758",
   email: "stevenmaelpacheco@gmail.com",
 };
